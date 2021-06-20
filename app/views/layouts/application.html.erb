@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TiendaCDS</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <h1>TiendaCDS</h1>
+    </header>
+
+    <section>
+      <nav>
+        <ul>
+          <li><a href="/products">Products</a></li>
+          <li>Login</li>
+          <li>Signup</li>
+        </ul>
+      </nav>
+
+      <main>
+        <%= yield %>
+      </main>
+    </section>
+  </body>
+</html>

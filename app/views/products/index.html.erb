@@ -1,0 +1,27 @@
+<h1>Products</h1>
+
+<table>
+  <tfoot>
+    <tr>
+      <td colspan="3">
+        <%= link_to 'New Product', new_product_path %>
+      </td>
+    </tr>
+  </tfoot>
+  
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td>
+          <h3><%= product.name %></h3>
+          <p>
+            <%= product.description %>
+          </p>
+          <p>
+            <%= product.price %>
+          </p>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

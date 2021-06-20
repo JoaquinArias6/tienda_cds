@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 300
+  description: King Leonidas of Sparta and a force of 300 men fight the Persians at Thermopylae in 480 B.C.
+  price: 10
+
+two:
+  name: Spirited Away
+  description: During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.
+  price: 5
+
+three:
+  name: Rango
+  description: Rango is an ordinary chameleon who accidentally winds up in the town of Dirt, a lawless outpost in the Wild West in desperate need of a new sheriff.
+  price: 7
