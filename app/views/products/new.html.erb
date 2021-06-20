@@ -1,13 +1,19 @@
 <h1>New Product</h1>
+
 <%= form_with model: @product do |form| %>
   <div>
-    <%= form.label 'Name of the product:' %>
+    <%= form.label 'Name:' %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label 'Describe it:' %>
+    <%= form.label 'Description:' %>
     <%= form.text_area :description%>
+  </div>
+
+  <div>
+    <%= form.label 'Image:' %>
+    <%= form.text_field :image_url %>
   </div>
 
   <div>

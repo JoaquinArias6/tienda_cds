@@ -13,12 +13,18 @@
     <% @products.each do |product| %>
       <tr>
         <td>
+          <%= image_tag(product.image_url) %>
+        </td>
+
+        <td>
           <h3><%= product.name %></h3>
+
           <p>
             <%= product.description %>
           </p>
+
           <p>
-            <%= product.price %>
+            <%= product.price %> USD
           </p>
         </td>
       </tr>
