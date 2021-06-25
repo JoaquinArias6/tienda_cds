@@ -6,27 +6,65 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Bootstrap stuff -->
+    <link rel="stylesheet" type="text/css" href="bootstrap.css"> 
+    <link rel="stylesheet" type="text/css" href="custom.css">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-      <h1>TiendaCDS</h1>
+      <h1 class = "display-1">TiendaCDS</h1>
     </header>
 
     <section>
-      <nav>
+      <!-- 
+        Sidebar of the website. Shows certain bar elements depending on the status of the session 
+        (if there is a logged user or not). 
+      -->
+      <nav class="nav flex-column navbar-expand-lg navbar-dark bg-dark">
         <ul>
-          <li><a href="/products">Products</a></li>
-          <li>Login</li>
-          <li>Signup</li>
+          <li class="navbar-brand"><%= link_to 'Products', root_path %></a></li>
+
+          <% if !logged_in? %>
+            <li class="navbar-brand"><%= link_to 'Login', login_path %></li>
+          <% end %>
+
+          <% if logged_in? %>
+            <li class="navbar-brand"><%= link_to 'My Favorites', favorites_path %></li>
+          <% end %>
+
+          <li class="navbar-brand"><%= link_to 'Signup', new_user_path %></li>
+          
+          <% if logged_in? %>
+            <li class="navbar-brand"><%= link_to 'Logout', logout_path, method: "delete" %></li>
+          <% end %>
         </ul>
+
+        <% if logged_in? %>
+          <p class = "navbar-text" style="color: white;">You are Logged In, <%= current_user.name %></p>
+        <% end %>
       </nav>
+
+      <!--
+        Alerts that will only be displayed upon mistakes, or bad handling of website pages.
+      -->
+      <% flash.each do |type, msg| %>
+        <div>
+          <%= msg %>
+        </div>
+      <% end %>
 
       <main>
         <%= yield %>
       </main>
     </section>
+
+    <!-- Another bootstrap thing -->
+    <script src="javascript/bootstrap.js"></script>
+
+
   </body>
 </html>

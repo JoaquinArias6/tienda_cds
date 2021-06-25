@@ -1,0 +1,18 @@
+<!--
+   Creates an unique session upon submit.
+-->
+
+<h1 style="margin-bottom: 20px;">Login</h1>
+<%= form_tag '/login' do %>
+   <div>
+      <p class = "form-label" >Username: </p>
+      <p class="form-control-plaintext"><%= text_field_tag(:username) %></p>
+
+      <p class = "form-label" >Password: </p>
+      <p class="form-control-plaintext"><%= password_field_tag(:password) %></p>
+   </div>
+
+   <div>
+      <%= submit_tag "Login"%>
+   </div>
+<% end %>

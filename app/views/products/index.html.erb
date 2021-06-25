@@ -1,31 +1,39 @@
 <h1>Products</h1>
 
-<table>
+<table class="table table-image">
+
+  <!-- Option displayed to allow users the creation of a new product -->
   <tfoot>
     <tr>
-      <td colspan="3">
-        <%= link_to 'New Product', new_product_path %>
+      <td style= "text-align: center; " colspan="3">
+        <%= button_to 'New Product + ', new_product_path, method: "get" %>
       </td>
     </tr>
   </tfoot>
   
+  <!-- Table view -->
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td>
-          <%= image_tag(product.image_url) %>
+        <td style="text-align: center;">
+          <div class="img-fluid"><%= image_tag(product.image_url) %></div>
         </td>
 
-        <td>
-          <h3><%= product.name %></h3>
+        <td style="margin-right: 20px;">
+          <h3 style="text-decoration: underline;"><%= product.name %></h3>
 
-          <p>
+          <p style="margin-left= 20px;">
             <%= product.description %>
           </p>
 
           <p>
-            <%= product.price %> USD
+            PRICE: <%= product.price %> USD
           </p>
+
+          <p>
+            <%= button_to 'Add to Favorites', favorite_product_path(product, type: "favorite"), method: :put %>
+          </p>
+          
         </td>
       </tr>
     <% end %>

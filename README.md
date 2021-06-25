@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+For the project to work as intended, it is necessary the load of the fixtures, used as some kind of test
+and for better views when first running the server.
 
-Things you may want to cover:
+For this purpose, it is simply required to write "bin/rails db:fixtures:load" in the terminal, specifically 
+within the "tienda_cds" folder.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If there is any issues, please, send me an email to: joaquin61200@hotmail.com

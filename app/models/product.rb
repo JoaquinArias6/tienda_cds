@@ -6,4 +6,7 @@ class Product < ApplicationRecord
 	validates :image_url, allow_blank: true, format: {
         with: %r{\.(gif|jpg|png)\z}i
     }
+
+    has_many :favorite_products 
+  	has_many :favorited_by, :through => :favorite_products, :source => :user
 end

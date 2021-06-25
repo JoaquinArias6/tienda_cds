@@ -1,0 +1,35 @@
+<h1> My Favorites </h1>
+
+  <table class="table table-image">
+  <tbody>
+
+    <!-- 
+      "x" represents each product. It was not written that way to prevent confusions with the product's instances outside 
+      the favorite related associations.
+    -->
+    <% current_user.favorites.each do |x| %>
+      <tr>
+        <td style= "text-align: center; " colspan="3">
+          <div class="img-fluid"><%= image_tag(x.image_url) %></div>
+        </td>
+
+        <td>
+          <h3 style="text-decoration: underline;"><%= x.name %></h3>
+
+          <p style="margin-left= 20px;">
+            <%= x.description %>
+          </p>
+
+          <p>
+            PRICE: <%= x.price %> USD
+          </p>
+
+          <p>
+            <%= button_to 'Remove from favorites', favorite_product_path(x, type: "unfavorite"), method: :put %>
+          </p>
+          
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

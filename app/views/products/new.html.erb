@@ -1,31 +1,31 @@
-<h1>New Product</h1>
+<!--
+  Creates a product upon submit
+-->
+
+<h1 style="margin-bottom: 20px;">New Product</h1>
 
 <%= form_with model: @product do |form| %>
   <div>
-    <%= form.label 'Name:' %>
-    <%= form.text_field :name %>
+    <p class = "form-label" ><%= form.label 'Name:' %></p>
+    <p class = "form-control-plaintext"><%= form.text_field :name %></p>
   </div>
 
   <div>
-    <%= form.label 'Description:' %>
-    <%= form.text_area :description%>
+    <p class = "form-label" ><%= form.label 'Description:' %></p>
+    <p class="form-control-plaintext"><%= form.text_area :description%></p>
   </div>
 
   <div>
     <%= form.label 'Image:' %>
-    <%= form.text_field :image_url %>
+    <p class="form-control-plaintext"><%= form.text_field :image_url %></p>
   </div>
 
   <div>
     <%= form.label 'Price:' %>
-    <%= form.number_field :price %>
+    <p class="form-control-plaintext"><%= form.number_field :price %></p>
   </div>
 
   <div>
     <%= form.submit 'Add Product' %>
   </div>
 <% end %>
-
-<footer>
-  <%= link_to 'Back', products_path %>
-</footer>

@@ -1,0 +1,64 @@
+/*
+ * This document manages and overrides some styles added via bootstrap.
+ * Provides a more customized view of the project.
+ */
+
+@import "bootstrap";
+
+header{
+    color: white;
+    background-color: #36454F;
+    font-style: bold;
+    font-size: 20px;
+    text-decoration-line: white;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+}
+body{
+    margin-left: 250px;
+    margin-top: 200px;
+    overflow-y: scroll;
+}
+img{
+    height:200px;
+    text-align:center;
+}
+td{
+    border-style: solid;
+    border-width: 2px;
+}
+table{
+    border-collapse: collapse;
+    layout: fixed;
+    overflow-y: scroll;
+}
+nav{
+    height: 100%;
+    width: 200px;
+    background-color: #007FA0;
+    border-style: dotted;
+    font-variant: small-caps;
+    position: fixed;
+    left: 0;
+    top: 144px;
+    padding-top: 20px;
+    overflow-x: hidden;
+}
+.navbar-text{
+    text-align: center;
+    color: #FFFFFF;
+}
+a:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a:visited {color: #FFFFFF}
+
+a:hover {color: #FFCC00}
+
+a:active {color: #DE5D83}
